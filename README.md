@@ -1,5 +1,7 @@
 # golog-tools
-[![Build Status](https://travis-ci.org/weldpua2008/golog-tools.svg?branch=master)](https://travis-ci.org/weldpua2008/golog-tools)
+[![Build Status](https://travis-ci.org/weldpua2008/golog-tools.svg?branch=master)](https://travis-ci.org/weldpua2008/golog-tools) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+
 
 Building the JSON lines for calltraces for logs in the following format:
 [start-timestamp] [end-timestamp] [trace] [service-name] [caller-span]->[span]
