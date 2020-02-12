@@ -16,25 +16,25 @@ script:
 
 before_deploy:
   # Set up git user name and tag this commit
-  - git config --local user.name "YOUR GIT USER NAME"
-  - git config --local user.email "YOUR GIT USER EMAIL"
+  - git config --local user.name "Valeriy Soloviov"
+  - git config --local user.email "weldpua2008@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
   - git tag $TRAVIS_TAG || true
 
   - go get github.com/laher/goxc
-  - goxc -tasks 'xc archive' -bc 'windows darwin linux' -d "$RELEASES_PATH" -resources-include 'README*'
+  - goxc -tasks 'xc archive' -bc 'windows darwin linux' -d "snapshot" -resources-include 'README*'
 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   file:
-    - $RELEASES_PATH/snapshot/unpaste_windows_386.zip
-    - $RELEASES_PATH/snapshot/unpaste_windows_amd64.zip
-    - $RELEASES_PATH/snapshot/unpaste_darwin_386.zip
-    - $RELEASES_PATH/snapshot/unpaste_darwin_amd64.zip
-    - $RELEASES_PATH/snapshot/unpaste_linux_386.tar.gz
-    - $RELEASES_PATH/snapshot/unpaste_linux_amd64.tar.gz
-    - $RELEASES_PATH/snapshot/unpaste_linux_arm.tar.gz
+    - snapshot/unpaste_windows_386.zip
+    - snapshot/unpaste_windows_amd64.zip
+    - snapshot/unpaste_darwin_386.zip
+    - snapshot/unpaste_darwin_amd64.zip
+    - snapshot/unpaste_linux_386.tar.gz
+    - snapshot/unpaste_linux_amd64.tar.gz
+    - snapshot/unpaste_linux_arm.tar.gz
   on:
     repo: weldpua2008/golog-tools
     tags: true
