@@ -22,19 +22,19 @@ before_deploy:
   - git tag $TRAVIS_TAG || true
 
   - go get github.com/laher/goxc
-  - goxc -tasks 'xc archive' -bc 'windows darwin linux' -d "snapshot" -resources-include 'README*'
+  - goxc -tasks 'xc archive' -bc 'windows darwin linux' -d "$RELEASES_PATH" -resources-include 'README*'
 
 deploy:
   provider: releases
   api_key: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   file:
-    - snapshot/golog-tools_windows_386.zip
-    - snapshot/golog-tools_windows_amd64.zip
-    - snapshot/golog-tools_darwin_386.zip
-    - snapshot/golog-tools_darwin_amd64.zip
-    - snapshot/golog-tools_linux_386.tar.gz
-    - snapshot/golog-tools_linux_amd64.tar.gz
-    - snapshot/golog-tools_linux_arm.tar.gz
+    - $RELEASES_PATH/snapshot/golog-tools_windows_386.zip
+    - $RELEASES_PATH/snapshot/golog-tools_windows_amd64.zip
+    - $RELEASES_PATH/snapshot/golog-tools_darwin_386.zip
+    - $RELEASES_PATH/snapshot/golog-tools_darwin_amd64.zip
+    - $RELEASES_PATH/snapshot/golog-tools_linux_386.tar.gz
+    - $RELEASES_PATH/snapshot/golog-tools_linux_amd64.tar.gz
+    - $RELEASES_PATH/snapshot/golog-tools_linux_arm.tar.gz
   on:
     repo: weldpua2008/golog-tools
     tags: true
