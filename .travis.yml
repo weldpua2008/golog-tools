@@ -27,8 +27,7 @@ before_deploy:
 
 deploy:
   provider: releases
-  api_key:
-    secure:
+  api_key: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   file:
     - $RELEASES_PATH/snapshot/unpaste_windows_386.zip
     - $RELEASES_PATH/snapshot/unpaste_windows_amd64.zip
