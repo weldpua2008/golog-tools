@@ -38,3 +38,4 @@ deploy:
   on:
     repo: weldpua2008/golog-tools
     tags: true
+    draft: true
