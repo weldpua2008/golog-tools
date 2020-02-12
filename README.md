@@ -9,5 +9,16 @@ go build cmd/logtracer/logtracer.go
 ```
 
 ### Run
-```someprogram | logtracer
+
+```
+asomeprogram | logtracer
+```
+
+### Demo
+![Demo](demo.gif)
+
+##### Gif was generated with:
+
+```
+docker run --rm -v $PWD:/data asciinema/asciicast2gif -s 2 -t solarized-dark demo.cast demo.gif
 ```
