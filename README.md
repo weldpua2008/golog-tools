@@ -1,8 +1,13 @@
 # golog-tools
-[![Build Status](https://travis-ci.org/weldpua2008/golog-tools.svg?branch=master)](https://travis-ci.org/weldpua2008/golog-tools) Log tools is the repo with the following tools:
-* trace calls in logs
+[![Build Status](https://travis-ci.org/weldpua2008/golog-tools.svg?branch=master)](https://travis-ci.org/weldpua2008/golog-tools)
 
-### Build
+Building the JSON lines for calltraces for logs in the following format:
+[start-timestamp] [end-timestamp] [trace] [service-name] [caller-span]->[span]
+
+
+
+
+### Build the code
 
 ```
 go build cmd/logtracer/logtracer.go
