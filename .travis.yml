@@ -28,13 +28,13 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   file:
-    - snapshot/unpaste_windows_386.zip
-    - snapshot/unpaste_windows_amd64.zip
-    - snapshot/unpaste_darwin_386.zip
-    - snapshot/unpaste_darwin_amd64.zip
-    - snapshot/unpaste_linux_386.tar.gz
-    - snapshot/unpaste_linux_amd64.tar.gz
-    - snapshot/unpaste_linux_arm.tar.gz
+    - snapshot/golog-tools_windows_386.zip
+    - snapshot/golog-tools_windows_amd64.zip
+    - snapshot/golog-tools_darwin_386.zip
+    - snapshot/golog-tools_darwin_amd64.zip
+    - snapshot/golog-tools_linux_386.tar.gz
+    - snapshot/golog-tools_linux_amd64.tar.gz
+    - snapshot/golog-tools_linux_arm.tar.gz
   on:
     repo: weldpua2008/golog-tools
     tags: true
