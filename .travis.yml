@@ -25,6 +25,7 @@ before_deploy:
   - goxc -tasks 'xc archive' -bc 'windows darwin linux' -d "$RELEASES_PATH" -resources-include 'README*'
 
 deploy:
+  skip_cleanup: true
   provider: releases
   api_key: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   file:
