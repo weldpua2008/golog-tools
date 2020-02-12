@@ -12,7 +12,7 @@ env:
     - RELEASES_PATH=/tmp/releases
 
 script:
-  - go test -v
+  - go test ./...
   # - golangci-lint run
 
 before_deploy:
